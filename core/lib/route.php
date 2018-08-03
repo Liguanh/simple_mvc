@@ -29,12 +29,18 @@ class route
             $path = $_SERVER['REQUEST_URI'];
 
             //获取pathinfo模式的数组
-            $path_arr = explode('/', trim($path,'/'.MVC));
+            $path_arr = explode('/', trim($path,'/'));
+
+            //处理MVC目录的问题
+            $offset = array_search(MVC,$path_arr);
+            unset($path_arr[$offset]);
+            $path_arr = array_values($path_arr);
 
             //设置控制器, 去除mvc目录层
             if(isset($path_arr[0])) {
                 $this->controller = $path_arr['0'];
             }
+
             unset($path_arr[0]);
 
             //设置控制器方法

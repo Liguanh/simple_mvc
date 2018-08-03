@@ -19,10 +19,10 @@ class indexController extends core
     {
         $model = new db();
 
-        $query = $model->query("select * from admin");
+        $query = $model->query("select * from admin")->fetchAll();
 
-        $data = $query->fetchAll();
 
-        echo json_encode($data, JSON);
+
+        echo "test";
     }
 }

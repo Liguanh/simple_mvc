@@ -17,7 +17,7 @@ define("LOCAL", realpath("./")); //当前框架所在的目录
 define('CORE',LOCAL.'/core');  //框架核心文件所在的目录
 define('APP',LOCAL.'/app');    //项目文件所在的目录
 define("MODULE", "app");
-define("MVC", "mvc");
+define("MVC", "simple_mvc");
 
 
 define('DEBUG',true);  //开启调试模式

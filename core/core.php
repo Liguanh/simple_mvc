@@ -80,7 +80,7 @@ class core
 
     public function dispaly($file)
     {
-        $file = 'app/views/'.$file;
+        $file = 'app/views/'.$file.".html";
         if(is_file($file))
         {
             extract($this->assign);
